@@ -1,3 +1,5 @@
+
+
 .navbar-custom {
     background-color: #106D51;
 }
@@ -17,4 +19,9 @@ pre[class*="language-"] button{
   
     /* more stuff */
   }
+  
+.bg {
+  background-image: url('/static/img/home-bg.jpg');
+  height: 50vh;
+}  
   
