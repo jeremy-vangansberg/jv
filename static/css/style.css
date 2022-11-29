@@ -20,8 +20,9 @@ pre[class*="language-"] button{
     /* more stuff */
   }
   
-.bg {
-  background-image: url('/static/img/home-bg.jpg');
-  height: 50vh;
+.bg-custom {
+  background-image: url('/static/img/bg-5.jpg');
+  height: 100vh;
+  background-size: cover;
 }  
   
