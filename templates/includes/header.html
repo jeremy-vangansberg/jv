@@ -1,13 +1,30 @@
 <nav class="navbar navbar-expand-lg navbar-custom bg-orange">
   <div class="container-fluid">
-    <a class="navbar-brand text-white" href="{% url 'home' %} ">Jérémy Vangansberg</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand pinkg" href="{% url 'home' %} "
+      >Jérémy Vangansberg</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDarkDropdown"
+      aria-controls="navbarNavDarkDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
       <ul class="navbar-nav">
-        {% comment %} <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        {% comment %}
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle text-white"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Ressources
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
@@ -15,13 +32,34 @@
             <li><a class="dropdown-item" href="#">Programmation</a></li>
             <li><a class="dropdown-item" href="#">Machine Learning</a></li>
           </ul>
-        </li> {% endcomment %}
+        </li>
+        {% endcomment %}
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Tutos
+          <a
+            class="nav-link dropdown-toggle pinkg"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          > 
+          Tutos
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="{% url 'django_heroku' %}">Déploiement</a></li>
+            <li>
+              <a class="dropdown-item pinkg" href="{% url 'django_heroku' %}"
+                >Déploiement</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item pinkg" href="{% url 'django_project' %}"
+                >Les bases de Django</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item pinkg" href="{% url 'git_practical' %}"
+                >Les bases de Git (en ligne de commandes)</a
+              >
+            </li>
           </ul>
         </li>
       </ul>
