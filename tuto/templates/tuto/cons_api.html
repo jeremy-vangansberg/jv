@@ -1,14 +1,21 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 
 {% block content %}
 
+<div class="container">
+<h1 class='my-3'>Multi-inputs API</h1>
 <form method="POST">
     {% csrf_token %}
-        {{form}}
+    <div class="mb-3">
+      <label for="{{ form.description.id_for_label }}" class="form-label">Description</label>
+      {{ form.description|add_class:"form-control" | attr:"placeholder:Ecrivez votre description ici"}}
+    </div>
+    <div class="mb-3">
+      <label for="{{ form.url.id_for_label }}" class="form-label">url</label>
+      {{ form.url|add_class:"form-control"| attr:"placeholder:Ecrivez l'url de votre ici" }}
+    </div>
     <input type="submit" />
   </form>
 </div>
-
-<p>{{response}}</p>
-
 {% endblock content %}

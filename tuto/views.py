@@ -23,7 +23,7 @@ def cons_api(request):
             print(form.cleaned_data)
             form.save()
             r = json.loads(r.text)
-            return render(request, 'tuto/cons_api.html', context = {'form':form, 'response' : r})
+            return render(request, 'tuto/cons_api_reponse.html', context = {'form':form, 'response' : r})
     else :
         form = ApiForm()
     return render(request, 'tuto/cons_api.html', context = {'form':form})
