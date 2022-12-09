@@ -176,4 +176,5 @@ LOGIN_REDIRECT_URL = '/'
 
 AUTH_USER_MODEL = "divers.User"
 
-CSRF_TRUSTED_ORIGINS = ['https://django-demo-jv.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = [
+    'https://jeremy-vangansberg.herokuapp.com/.herokuapp.com']
