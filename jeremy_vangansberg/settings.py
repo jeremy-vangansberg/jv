@@ -177,4 +177,4 @@ LOGIN_REDIRECT_URL = '/'
 AUTH_USER_MODEL = "divers.User"
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://jeremy-vangansberg.herokuapp.com/.herokuapp.com']
+    'https://jeremy-vangansberg.herokuapp.com/']
