@@ -82,30 +82,32 @@ DATABASES = {
 }
 
 
-# DB_USERNAME = os.getenv('POSTGRES_USER')
-# DB_PASSWORD = os.getenv('POSTGRES_PASSWORD')
-# DB_DATABASE = os.getenv('POSTGRES_DB')
-# DB_HOST = os.getenv('POSTGRES_HOST')
-# DB_PORT = os.getenv('POSTGRES_PORT')
-# POSTGRES_AVAIL = all(
-#     [DB_USERNAME,
-#     DB_PASSWORD,
-#     DB_DATABASE,
-#     DB_HOST,
-#     DB_PORT]
-# )
+DB_USERNAME = os.getenv('POSTGRES_USER')
+DB_PASSWORD = os.getenv('POSTGRES_PASSWORD')
+DB_DATABASE = os.getenv('POSTGRES_DB')
+DB_HOST = os.getenv('POSTGRES_HOST')
+DB_PORT = os.getenv('POSTGRES_PORT')
+POSTGRES_AVAIL = all(
+    [DB_USERNAME,
+    DB_PASSWORD,
+    DB_DATABASE,
+    DB_HOST,
+    DB_PORT]
+)
 
-# if POSTGRES_AVAIL:
-#     DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': DB_DATABASE,
-#         'USER': DB_USERNAME,
-#         'PASSWORD': DB_PASSWORD,
-#         'HOST': DB_HOST,
-#         'PORT': DB_PORT,
-#     }
-# }
+DEPLOYED = str(os.getenv('IS_DEPLOYED')) == "1"
+
+if POSTGRES_AVAIL and DEPLOYED:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': DB_DATABASE,
+        'USER': DB_USERNAME,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
+        'PORT': DB_PORT,
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
