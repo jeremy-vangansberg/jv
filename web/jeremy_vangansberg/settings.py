@@ -161,7 +161,7 @@ LOGIN_REDIRECT_URL = '/'
 AUTH_USER_MODEL = "divers.User"
 
 STATICFILES_DIRS = [
-    BASE_DIR / "staticfiles",
+    BASE_DIR / "static",
     # '/var/www/static/',
 ]
 
