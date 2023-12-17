@@ -1,73 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-custom bg-orange">
-  <div class="container-fluid">
-    <a class="navbar-brand pinkg" href="{% url 'home' %} "
-      >Jérémy Vangansberg</a
-    >
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavDarkDropdown"
-      aria-controls="navbarNavDarkDropdown"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-      <ul class="navbar-nav">
-        {% comment %}
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle text-white"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Ressources
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">Mathématiques</a></li>
-            <li><a class="dropdown-item" href="#">Programmation</a></li>
-            <li><a class="dropdown-item" href="#">Machine Learning</a></li>
-          </ul>
-        </li>
-        {% endcomment %}
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle pinkg"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          > 
-          Tutos
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li>
-              <a class="dropdown-item pinkg" href="{% url 'django_heroku' %}"
-                >Déploiement</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item pinkg" href="{% url 'django_project' %}"
-                >Les bases de Django</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item pinkg" href="{% url 'git_practical' %}"
-                >Les bases de Git (en ligne de commandes)</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item pinkg" href="{% url 'cons_api' %}"
-                >API multi-inputs</a
-              >
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+ {% load static %}
+
+  <nav class="w-full fixed top-0 bg-white z-10">
+    <div class="container mx-auto py-5 flex justify-between items-center" >
+      <div class="flex items-center gap-2">
+        <img src="{% static 'img/jeremy-50.png' %}" alt="">
+        <div class="container">
+          <span>Jérémy Vangansberg</span>
+        </div>
+      </div>
+      
+        <ul class="hidden md:flex space-x-10 text-Onyx font-bold text-sm uppercase">
+          <li class="hover:text-FrenchGray"><a href="">Services</a></li>
+          <li class="hover:text-FrenchGray"><a href="">Projets</a></li>
+          <li class="hover:text-FrenchGray"><a href="">Outils</a></li>
+          <li class="hover:text-FrenchGray"><a href="">Ressources</a></li>
+          <li class="hover:text-FrenchGray"><a href="">Contact</a></li>
+        </ul>
+
+        <img src="{% static 'img/moon.png' %}" alt="" class="hidden md:block w-5 cursor-pointer">
+
+        <div id="hamburger" class="space-y-1 md:hidden cursor-pointer z-20">
+          <div id="ham-el" class="w-6 h-1 bg-black"></div>
+          <div id="ham-el" class="w-6 h-1 bg-black"></div>
+          <div id="ham-el" class="w-6 h-1 bg-black"></div>
+        </div>
+
+        <ul id="menu" class="hidden bg-MountbattenPink absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-5 text-Onyx text-center">
+          <li><a href="">Services</a></li>
+          <li><a href="">Projets</a></li>
+          <li><a href="">Outils</a></li>
+          <li><a href="">Ressources</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      
+  </nav>
