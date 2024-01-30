@@ -3,14 +3,20 @@
 import os
 import sys
 from jeremy_vangansberg.settings import base
+import dotenv
+import pathlib
 
+CURRENT_DIR = pathlib.Path(__file__).resolve().parent
+BASE_DIR = CURRENT_DIR.parent
+ENV_FILE_PATH = BASE_DIR / ".env"
 
 def main():
-    """Run administrative tasks."""
     if base.DEBUG :
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'jeremy_vangansberg.settings.dev')
-    else : 
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'jeremy_vangansberg.settings.prod')
+        settings_path = 'jeremy_vangansberg.settings.dev'
+    else :
+        settings_path = 'jeremy_vangansberg.settings.prod'
+    """Run administrative tasks."""
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_path)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -23,4 +29,5 @@ def main():
 
 
 if __name__ == '__main__':
+    dotenv.read_dotenv(ENV_FILE_PATH)
     main()
