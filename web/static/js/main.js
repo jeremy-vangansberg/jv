@@ -1,46 +1,22 @@
-const copyButtonLabel = "Copy Code";
+'use strict'
 
-// use a class selector if available
-let blocks = document.querySelectorAll("pre");
+const btn = document.querySelector('.button')
+const test = document.querySelector('.test')
+test.classList.add('opacity-0')
+test.classList.add('translate-y-1')
 
-blocks.forEach((block) => {
-  // only add button if browser supports Clipboard API
-  if (navigator.clipboard) {
-    let button = document.createElement("button");
 
-    button.innerText = copyButtonLabel;
-    block.appendChild(button);
-
-    button.addEventListener("click", async () => {
-      await copyCode(block);
-    });
+btn.addEventListener('click', (e) => {
+  if (test.classList.contains('opacity-0')) {
+    test.classList.remove('opacity-0')
+    test.classList.remove('translate-y-1')
+    test.classList.add('opacity-100')
+    test.classList.add('translate-y-0')
   }
-});
-
-async function copyCode(block, button) {
-  let code = block.querySelector("code");
-  let text = code.innerText;
-
-  await navigator.clipboard.writeText(text);
-
-  // visual feedback that task is completed
-  button.innerText = "Code Copied";
-
-  setTimeout(() => {
-    button.innerText = copyButtonLabel;
-  }, 700);
-}
-
-
-const hamburger = document.querySelector("#hamburger");
-const menu = document.querySelector("#menu");
-const hamElements = document.querySelectorAll("#ham-el");
-
-hamburger.addEventListener('click', () => {
-  menu.classList.toggle('hidden');
-  
-  hamElements.forEach(element => {
-    element.classList.toggle('bg-white');
-    element.classList.toggle('bg-black');
-  });
-});
+  else {
+    test.classList.add('opacity-0')
+    test.classList.add('translate-y-1')
+    test.classList.remove('opacity-100')
+    test.classList.remove('translate-y-0')
+  }
+})
