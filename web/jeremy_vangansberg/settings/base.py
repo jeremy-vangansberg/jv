@@ -23,7 +23,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY') or 1
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = str(os.getenv('DEBUG')) == '1'
-print(DEBUG)
+# print(DEBUG)
 
 ALLOWED_HOSTS = ['*']
 
@@ -39,9 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'divers',
     'tuto',
-    'ckeditor',
-    ''
-
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -170,7 +168,7 @@ STATICFILES_DIRS = [
 ]
 STATIC_URL = os.environ.get("DJANGO_STATIC_URL", "/static/")
 STATIC_ROOT = os.environ.get("DJANGO_STATIC_ROOT", BASE_DIR / 'staticfiles')
-STATICFILES_STORAGE = ('whitenoise.storage.CompressedStaticFilesStorage')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
 # CSRF_TRUSTED_ORIGINS = [

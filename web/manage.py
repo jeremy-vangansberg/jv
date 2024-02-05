@@ -2,15 +2,15 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from jeremy_vangansberg.settings import base
 import dotenv
 
 def main():
-    if base.DEBUG :
+    if DEBUG :
         settings_path = 'jeremy_vangansberg.settings.dev'
     else :
         settings_path = 'jeremy_vangansberg.settings.prod'
     """Run administrative tasks."""
+    print('manage',settings_path)
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_path)
     try:
         from django.core.management import execute_from_command_line
@@ -25,4 +25,5 @@ def main():
 
 if __name__ == '__main__':
     dotenv.read_dotenv()
+    DEBUG = os.getenv('DEBUG') == '1'
     main()
