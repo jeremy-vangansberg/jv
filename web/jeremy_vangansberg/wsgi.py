@@ -20,12 +20,14 @@ ENV_FILE_PATH = BASE_DIR / ".env"
 
 dotenv.read_dotenv(str(ENV_FILE_PATH))
 
-from jeremy_vangansberg.settings import base
+DEBUG = os.getenv('DEBUG') == '1'
 
-if base.DEBUG :
+if DEBUG :
     settings_path = 'jeremy_vangansberg.settings.dev'
 else :
     settings_path = 'jeremy_vangansberg.settings.prod'
+
+print(settings_path)
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_path)
 
