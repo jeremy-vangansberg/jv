@@ -1,12 +1,54 @@
  {% load static %}
 
+<header class='bg-gray-300'>
+  <nav class='justify-between max-w-6xl mx-auto h-16 items-center px-6 font-semibold text-base hidden md:flex'>
+
+    <div class='flex items-center gap-x-3'>
+      <img class="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+      <p>Jérémy VANGANSBERG</p>
+    </div>
+    <div class='gap-x-4 lg:gap-x-12 flex'>
+      {% url 'home' as url_home %}
+      <a href="" {% if request.path == "/" %}class='text-white'{% endif %} >Curriculum</a>
+      <a href="">Projets</a>
+      <a href="">Ressources</a>
+    </div>
+    <a  href="">Login &#8594;</a>
+
+    <!--
+      Hamburger
+    -->
+  </nav>
+
+
+  <div class='md:hidden flex justify-end mx-auto p-6 bg-slate-300'>
+    <div id='hamburger' class='w-6 space-y-1  z-30'>
+      <div class="h-1 bg-black"></div>
+      <div class="h-1 bg-black"></div>
+      <div class="h-1 bg-black"></div>
+    </div>
+  </div>
+
+  <div id="menu" class='hidden flex flex-col absolute top-0 w-full z-20 bg-slate-500 text-center gap-4 py-5 rounded-b-lg text-white md:hidden'>
+    <a href="">Ceci est un lien plus long</a>
+    <a href="">Lien 2</a>
+    <a href="">Lien 3</a>
+    <a href="">Login &#8594;</a>
+  </div>
+
+
+
+</header>
+
+
+{% comment %} 
 <header>
   <nav>
     <div class='flex justify-between items-center max-w-6xl mx-auto h-16 p-6'>
       <div class='flex'>
         <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
       </div>
-      <div class='hidden lg:gap-x-12 md:flex md:gap-x-8'>
+      <div class='hidden lg:gap-x-12 md:flex md:gap-x-8 font-semibold'>
         <a href="#" class='text-base font-semibold leading-7 text-gray-900'>À propos de moi</a>
         <a href="#" class='text-base font-semibold leading-7 text-gray-900'>Projets</a>
         <a href="#" class='text-base font-semibold leading-7 text-gray-900'>Ressources</a>
@@ -29,7 +71,7 @@
     </div>
   </nav>
 
-</header>
+</header> {% endcomment %}
 
 
 
