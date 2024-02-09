@@ -5,12 +5,11 @@
  {% url "projets" as projets_url %}
  {% url "ressources" as ressources_url %}
 
-<header class='bg-gray-300'>
-  <nav class='justify-between max-w-6xl mx-auto h-16 items-center px-6 font-semibold text-base hidden md:flex '>
+<header class='sticky top-0 z-50 bg-white'>
+  <nav class='justify-between max-w-8xl mx-auto h-16 items-center px-6 font-mono text-base hidden md:flex '>
 
 
       <a class='hover:text-blue-300 flex items-center gap-x-3' href="{{home_url}}">
-        <img class="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
         <p>Jérémy VANGANSBERG</p>
       </a>
       
@@ -18,12 +17,10 @@
       
 
 
-      <a href="{{cv_url}}" class="hover:text-blue-300 {% if request.path == cv_url %} text-white {% endif %}" >Curriculum</a>
-      <a href="{{projets_url}}" class="hover:text-blue-300 {% if request.path == projets_url %} text-white {% endif %}">Projets</a>
-      <a href="{{ressources_url}}" class="hover:text-blue-300 {% if request.path == ressources_url %} text-white {% endif %}">Ressources</a>
+      <a href="{{cv_url}}" class="hover:text-blue-300 {% if request.path == cv_url %} underline {% endif %}" >Curriculum</a>
+      <a href="{{projets_url}}" class="hover:text-blue-300 {% if request.path == projets_url %} underline {% endif %}">Projets</a>
+      <a href="{{ressources_url}}" class="hover:text-blue-300 {% if request.path == ressources_url %} underline {% endif %}">Ressources</a>
     </div>
-
-    <a  href="">Login &#8594;</a>
 
     <!--
       Hamburger
