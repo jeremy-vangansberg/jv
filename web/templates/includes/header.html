@@ -1,18 +1,28 @@
  {% load static %}
 
+ {% url 'home' as home_url %}
+ {% url "cv" as cv_url %}
+ {% url "projets" as projets_url %}
+ {% url "ressources" as ressources_url %}
+
 <header class='bg-gray-300'>
   <nav class='justify-between max-w-6xl mx-auto h-16 items-center px-6 font-semibold text-base hidden md:flex'>
 
-    <div class='flex items-center gap-x-3'>
-      <img class="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-      <p>Jérémy VANGANSBERG</p>
-    </div>
+
+      <a class='flex items-center gap-x-3' href="{{home_url}}">
+        <img class="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+        <p>Jérémy VANGANSBERG</p>
+      </a>
+      
     <div class='gap-x-4 lg:gap-x-12 flex'>
-      {% url 'home' as url_home %}
-      <a href="" {% if request.path == "/" %}class='text-white'{% endif %} >Curriculum</a>
-      <a href="">Projets</a>
-      <a href="">Ressources</a>
+      
+
+
+      <a href="{{cv_url}}" {% if request.path == cv_url %} class='text-white'{% endif %} >Curriculum</a>
+      <a href="{{projets_url}}" {% if request.path == projets_url %} class='text-white'{% endif %}>Projets</a>
+      <a href="{{ressources_url}}" {% if request.path == ressources_url %} class='text-white'{% endif %}>Ressources</a>
     </div>
+    
     <a  href="">Login &#8594;</a>
 
     <!--
