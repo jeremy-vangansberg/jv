@@ -15,7 +15,7 @@ services:
       - "8000:8000"
     # command: sh -c "chmod +x /app/migrate.sh && sh /app/migrate.sh && /app/entrypoint.sh"
     volumes:
-      - static:/app/static
+      - static:/home/app/static
       - ./web:/app:ro
   postgres_db:
     image: postgres

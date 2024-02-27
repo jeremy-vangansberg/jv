@@ -36,11 +36,11 @@ const hamburger = document.querySelector("#hamburger");
 const menu = document.querySelector("#menu");
 const hamElements = document.querySelectorAll("#ham-el");
 
-hamburger.addEventListener('click', () => {
+hamburger.addEventListener('click', function () {
   menu.classList.toggle('hidden');
   
-  hamElements.forEach(element => {
-    element.classList.toggle('bg-white');
-    element.classList.toggle('bg-black');
-  });
+  // hamElements.forEach(element => {
+  //   element.classList.toggle('bg-white');
+  //   element.classList.toggle('bg-black');
+  // });
 });
